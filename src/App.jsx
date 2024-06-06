@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SurveyPollWidget from "./components/surveyPollWidget";
 import { questions } from "./constants/questions";
 function App() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleModal = () => {
     setModalOpen(true);
