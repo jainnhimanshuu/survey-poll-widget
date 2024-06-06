@@ -19,3 +19,5 @@ class SurveyPollWidgetEmbed {
 }
 
 window.SurveyPollWidgetEmbed = SurveyPollWidgetEmbed;
+
+export default SurveyPollWidgetEmbed;
