@@ -40,6 +40,10 @@ module.exports = {
       inject: "body",
       chunks: ["main"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./public/embed-survey.html",
+      filename: "embed-survey.html",
+    }),
   ],
   devServer: {
     static: path.join(__dirname, "dist"),

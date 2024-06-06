@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SurveyPollWidget from "./components/surveyPollWidget";
 import { questions } from "./constants/questions";
-function App() {
+function App({ embedPage }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModal = () => {
@@ -25,18 +25,20 @@ function App() {
           })}
       </div>
 
-      <div className="flex items-center justify-center mt-4">
-        <button
-          className="py-2 px-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:to-cyan-500 hover:from-blue-500 transition-all font-bold text-white"
-          onClick={() => {
-            handleModal();
-          }}
-        >
-          Embed
-        </button>
-      </div>
+      {!embedPage && (
+        <div className="flex items-center justify-center mt-4">
+          <button
+            className="py-2 px-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:to-cyan-500 hover:from-blue-500 transition-all font-bold text-white"
+            onClick={() => {
+              handleModal();
+            }}
+          >
+            Embed
+          </button>
+        </div>
+      )}
 
-      {modalOpen && (
+      {!embedPage && modalOpen && (
         <div className="absolute top-0 left-0 backdrop-blur-sm bg-white/50 w-full h-full p-4">
           <div
             className="relative text-2xl font-bold cursor-pointer float-right mb-8"

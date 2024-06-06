@@ -13,7 +13,7 @@ class SurveyPollWidgetEmbed {
     const container = document.querySelector(this.selector);
     if (container) {
       const root = createRoot(container);
-      root.render(<App />);
+      root.render(<App embedPage={true} />);
     }
   }
 }
